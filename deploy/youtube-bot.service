@@ -1,0 +1,16 @@
+[Unit]
+Description=YouTube Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/youtube-bot
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
